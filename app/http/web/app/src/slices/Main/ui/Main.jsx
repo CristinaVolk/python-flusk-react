@@ -4,8 +4,7 @@ import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 import { OktaAuth, toRelativeUrl } from '@okta/okta-auth-js';
 import clientSecrets from '../model/clientSecrets.json';
 import { WithOktaLogin } from '../../Login/ui/Login';
-import { Home } from '../../Home/ui/Home';
-import Button from "@material-ui/core/Button";
+import {HomeWithOktaAndStyles} from '../../Home/ui/Home';
 
 export const Main = (props) => {
     const history = useHistory();
@@ -33,7 +32,7 @@ export const Main = (props) => {
             <Switch>
                 <Route exact path="/" component={WithOktaLogin}/>
                 <Route path="/callback" component={LoginCallback}/>
-                <SecureRoute path="/home" component={Home}/>
+                <SecureRoute path="/home" component={HomeWithOktaAndStyles}/>
             </Switch>
         </Security>
     );

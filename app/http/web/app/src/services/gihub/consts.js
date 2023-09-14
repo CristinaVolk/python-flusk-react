@@ -1,0 +1,1 @@
+export const BASE_GIHNUB_URL = 'https://api.github.com/';
